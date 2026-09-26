@@ -1,1 +1,1 @@
-https://itsmaheshhere.github.io/Browser-Device-Information-Website/
+https://mah3shbishnoi.github.io/Browser-Device-Information-Website/
