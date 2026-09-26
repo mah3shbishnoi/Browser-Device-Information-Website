@@ -258,6 +258,17 @@
                         version: gl.getParameter(gl.VERSION),
                         shadingLanguageVersion: gl.getParameter(gl.SHADING_LANGUAGE_VERSION)
                     };
+
+                    // Get unmasked GPU vendor and renderer when the browser allows it
+                    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+
+                    if (debugInfo) {
+                        info.webgl.unmaskedVendor =
+                            gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+
+                        info.webgl.unmaskedRenderer =
+                            gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+                    }
                 }
             } catch (e) {
                 info.webgl = 'Error: ' + e.message;
@@ -487,4 +498,3 @@
     <script src="822.js"></script>
 </body>
 </html>
-
